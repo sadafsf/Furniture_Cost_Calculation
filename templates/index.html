@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furniture Tracker</title>
+</head>
+<body>
+    <h1>Furniture Tracker</h1>
+    <p>Total Price: ${{ total_price }}</p>
+    <a href="{{ url_for('add_item') }}">Add New Item</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price (Sale/Original)</th>
+                <th>Room</th>
+                <th>URL</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in furniture_list %}
+            <tr>
+                <td>{{ item['name'] }}</td>
+                <td>
+                    {% if item['original_price'] %}
+                        <del>${{ item['original_price'] }}</del> ${{ item['sale_price'] }}
+                    {% else %}
+                        ${{ item['sale_price'] }}
+                    {% endif %}
+                </td>
+                <td>{{ item['room'] }}</td>
+                <td><a href="{{ item['url'] }}" target="_blank">View</a></td>
+                <td>
+                    <a href="{{ url_for('update_item', name=item['name']) }}">Update</a> |
+                    <a href="{{ url_for('remove_item', name=item['name']) }}">Remove</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Display flash messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
