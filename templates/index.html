@@ -3,48 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title>Furniture Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <h1>Furniture Tracker</h1>
-    <p>Total Price: ${{ total_price }}</p>
-    <a href="{{ url_for('add_item') }}">Add New Item</a>
 
-    <table border="1">
+    <!-- Loop through each room and display its furniture and total price -->
+    {% for room, items in room_furniture.items() %}
+    <h2>{{ room }} - Total Price: ${{ room_totals[room] }}</h2>
+    <table>
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Price (Sale/Original)</th>
-                <th>Room</th>
+                <th class="price">Price (Sale/Original)</th>
                 <th>URL</th>
-                <th>Actions</th>
+                <th class="actions">Actions</th>
             </tr>
         </thead>
         <tbody>
-            {% for item in furniture_list %}
+            {% for item in items %}
             <tr>
                 <td>{{ item['name'] }}</td>
-                <td>
-                    {% if item['original_price'] %}
-                        <del>${{ item['original_price'] }}</del> ${{ item['sale_price'] }}
-                    {% else %}
+                <td class="price">
+                    {% if item['sale_price'] and item['original_price'] %}
+                        <!-- Show both sale and original prices if both are available -->
+                        <span class="strike">${{ item['original_price'] }}</span> ${{ item['sale_price'] }}
+                    {% elif item['sale_price'] %}
+                        <!-- Show sale price only if no original price is available -->
                         ${{ item['sale_price'] }}
+                    {% else %}
+                        <!-- Show original price if only original price exists -->
+                        ${{ item['original_price'] }}
                     {% endif %}
                 </td>
-                <td>{{ item['room'] }}</td>
+                
                 <td><a href="{{ item['url'] }}" target="_blank">View</a></td>
-                <td>
+                <td class="actions">
                     <a href="{{ url_for('update_item', furniture_id=item['id']) }}">Update</a> |
-                    <a href="{{ url_for('remove_item', furniture_id=item['id']) }}">Remove</a>
+                    <a href="{{ url_for('remove_item', furniture_id=item['id']) }}" onclick="return confirm('Are you sure you want to remove this item?');">Remove</a>
                 </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    {% endfor %}
+
+    <!-- Overall Total Price -->
+    <div class="overall-total">Overall Total Price: ${{ overall_total_price }}</div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{{ url_for('add_item') }}" style="font-size: 1.2em; color: #007BFF;">Add New Item</a>
+    </div>
 
     <!-- Display flash messages -->
     {% with messages = get_flashed_messages() %}
         {% if messages %}
-            <ul>
+            <ul style="color: red;">
                 {% for message in messages %}
                     <li>{{ message }}</li>
                 {% endfor %}

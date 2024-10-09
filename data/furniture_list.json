@@ -1,13 +1,5 @@
 [
     {
-        "id": "c6d2e526-da5b-4e37-acec-9da5d15856bb",
-        "name": "Talia Pendant (14\")",
-        "original_price": null,
-        "sale_price": 239.0,
-        "room": "Living room",
-        "url": "https://www.westelm.ca/products/talia-pendant-14-h12928/?position=1"
-    },
-    {
         "id": "7f3777c4-f7c1-40ff-b130-e544a49bbf3a",
         "name": "best sellerInfinity Brass Oblong Wall Mirror 23\"x37\"",
         "original_price": null,
@@ -18,9 +10,25 @@
     {
         "id": "37b17be4-64ce-4bc5-873d-7360d7d9e123",
         "name": "Portobello Stoneware Dessert Plate",
-        "original_price": null,
+        "original_price": 24.0,
         "sale_price": 16.0,
+        "room": "Kitchen ",
+        "url": ""
+    },
+    {
+        "id": "b273470c-3e83-4c55-8909-9a64c1b3de46",
+        "name": "SickKids Holiday Skiers Stoneware Figural Mug",
+        "original_price": null,
+        "sale_price": 24.0,
+        "room": "Kitchen ",
+        "url": "https://www.westelm.ca/products/holiday-skiers-figural-mug-d17013/?position=0"
+    },
+    {
+        "id": "05bb9688-5b09-4597-8803-88e3c7198b49",
+        "name": "Talia Pendant (14\")",
+        "original_price": null,
+        "sale_price": 239.0,
         "room": "Living room",
-        "url": "https://www.anthropologie.com/en-ca/shop/portobello-stoneware-dessert-plate?color=020&type=STANDARD&size=Dessert+Plate&quantity=1"
+        "url": "https://www.westelm.ca/products/talia-pendant-14-h12928/?position=1"
     }
 ]

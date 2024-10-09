@@ -2,15 +2,32 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 import furniture
 from scraper import fetch_furniture_data
 
+from collections import defaultdict
 
 app = Flask(__name__)
 app.secret_key = "supersecretkey"  # For flash messages
 
+
 @app.route('/')
 def index():
     furniture_list = furniture.load_furniture_list()
-    total_price = sum(item['sale_price'] or item['original_price'] for item in furniture_list)
-    return render_template('index.html', furniture_list=furniture_list, total_price=total_price)
+
+    # Group furniture by rooms and calculate total price for each room
+    room_furniture = defaultdict(list)
+    overall_total_price = 0
+
+    for item in furniture_list:
+        room = item['room']
+        # Use sale price if it exists, otherwise use the original price
+        price = item['sale_price'] if item['sale_price'] else item['original_price']
+        room_furniture[room].append(item)
+        overall_total_price += price
+
+    # Calculate total price per room
+    room_totals = {room: sum(item['sale_price'] if item['sale_price'] else item['original_price'] for item in items)
+                   for room, items in room_furniture.items()}
+
+    return render_template('index.html', room_furniture=room_furniture, room_totals=room_totals, overall_total_price=overall_total_price)
 
 
 @app.route('/add_item', methods=['GET', 'POST'])
@@ -33,7 +50,7 @@ def add_item():
             sale_price = None
 
         room = request.form['room']
-        furniture.add_furniture_with_sale(furniture_list, name, original_price, sale_price, room, url)
+        furniture.add_furniture_with_sale(furniture_list, name, original_price, room, url, sale_price)
         flash(f'{name} added successfully.')
         return redirect(url_for('index'))
 

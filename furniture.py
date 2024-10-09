@@ -18,18 +18,19 @@ def save_furniture_list(furniture_list):
     with open(FURNITURE_FILE, 'w') as file:
         json.dump(furniture_list, file, indent=4)
 
-def add_furniture_with_sale(furniture_list, name, original_price, sale_price, room, url):
-    """Add a furniture item with a sale price, original price, and URL to the list."""
+def add_furniture_with_sale(furniture_list, name, original_price,  room, url, sale_price=None):
+    """Add a furniture item with its sale price, original price, and URL to the list."""
     furniture_item = {
         'id': str(uuid.uuid4()),  # Generate a unique ID for each item
         'name': name,
         'original_price': original_price,
-        'sale_price': sale_price,
+        'sale_price': sale_price if sale_price else None,  # Ensure sale_price is None if not on sale
         'room': room,
-        'url': url
-    }
+        'url': url}
     furniture_list.append(furniture_item)
     save_furniture_list(furniture_list)
+
+
 
 def remove_furniture(furniture_list, furniture_id):
     """Remove a furniture item by its unique ID."""
