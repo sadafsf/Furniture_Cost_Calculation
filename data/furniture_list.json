@@ -1,23 +1,26 @@
 [
     {
-        "name": "Tambor Indoor/Outdoor Round Coffee Table (30\"\u201340\")",
-        "min_price": 539.20974,
-        "max_price": null,
-        "room": "",
-        "url": "https://www.westelm.ca/products/tambor-concrete-outdoor-drum-coffee-table-h2612/?pkey=coutdoor-coffee-tables&position=4"
+        "id": "c6d2e526-da5b-4e37-acec-9da5d15856bb",
+        "name": "Talia Pendant (14\")",
+        "original_price": null,
+        "sale_price": 239.0,
+        "room": "Living room",
+        "url": "https://www.westelm.ca/products/talia-pendant-14-h12928/?position=1"
     },
     {
-        "name": "Tambor Indoor/Outdoor Round Coffee Table (30\"\u201340\")",
+        "id": "7f3777c4-f7c1-40ff-b130-e544a49bbf3a",
+        "name": "best sellerInfinity Brass Oblong Wall Mirror 23\"x37\"",
         "original_price": null,
-        "sale_price": 539.20974,
-        "room": "",
-        "url": "https://www.westelm.ca/products/tambor-concrete-outdoor-drum-coffee-table-h2612/?pkey=coutdoor-coffee-tables&position=4"
+        "sale_price": 149.0,
+        "room": "Living room",
+        "url": "https://www.cb2.ca/accessories/mirrors/"
     },
     {
-        "name": "Tambor Indoor/Outdoor Round Coffee Table (30\"\u201340\")",
+        "id": "37b17be4-64ce-4bc5-873d-7360d7d9e123",
+        "name": "Portobello Stoneware Dessert Plate",
         "original_price": null,
-        "sale_price": 539.20974,
-        "room": "",
-        "url": "https://www.westelm.ca/products/tambor-concrete-outdoor-drum-coffee-table-h2612/?pkey=coutdoor-coffee-tables&position=4"
+        "sale_price": 16.0,
+        "room": "Living room",
+        "url": "https://www.anthropologie.com/en-ca/shop/portobello-stoneware-dessert-plate?color=020&type=STANDARD&size=Dessert+Plate&quantity=1"
     }
 ]

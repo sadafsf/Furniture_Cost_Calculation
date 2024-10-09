@@ -6,24 +6,23 @@
 </head>
 <body>
     <h1>Update Furniture: {{ name }}</h1>
-
     <form method="POST">
         <label for="original_price">New Original Price:</label>
         <input type="number" step="0.01" name="original_price" placeholder="Original Price" required><br>
-
+    
         <label for="sale_price">New Sale Price (optional):</label>
         <input type="number" step="0.01" name="sale_price" placeholder="Sale Price"><br>
-
+    
         <label for="room">New Room:</label>
         <input type="text" name="room" placeholder="Room"><br>
-
+    
         <label for="url">New URL:</label>
         <input type="url" name="url" placeholder="URL"><br><br>
-
+    
         <button type="submit">Update Furniture</button>
-    </form>
-
-    <br>
+    </form> 
+    
     <a href="{{ url_for('index') }}">Back to Home</a>
+    
 </body>
 </html>

@@ -11,19 +11,21 @@
         <!-- Option 1: Enter a URL to fetch data -->
         <label for="url">Enter URL to fetch furniture data:</label>
         <input type="url" name="url" placeholder="https://example.com" size="50"><br><br>
-
+    
         <!-- Option 2: Manual Entry if URL is not provided -->
         <label for="name">Or enter furniture name manually:</label>
         <input type="text" name="name" placeholder="Furniture name"><br>
-
+    
         <label for="price">Enter price manually:</label>
         <input type="number" step="0.01" name="price" placeholder="Price"><br>
-
+    
         <label for="room">Room:</label>
         <input type="text" name="room" placeholder="Living Room"><br><br>
-
+    
         <button type="submit">Add Furniture</button>
     </form>
+    
+    
 
     <br>
     <a href="{{ url_for('index') }}">Back to Home</a>
