@@ -3,42 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Add New Furniture</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+
     <h1>Add New Furniture Item</h1>
 
     <form method="POST">
         <!-- Option 1: Enter a URL to fetch data -->
         <label for="url">Enter URL to fetch furniture data:</label>
-        <input type="url" name="url" placeholder="https://example.com" size="50"><br><br>
-    
+        <input type="url" name="url" placeholder="https://example.com" size="50">
+
         <!-- Option 2: Manual Entry if URL is not provided -->
         <label for="name">Or enter furniture name manually:</label>
-        <input type="text" name="name" placeholder="Furniture name"><br>
-    
+        <input type="text" name="name" placeholder="Furniture name">
+
         <label for="price">Enter price manually:</label>
-        <input type="number" step="0.01" name="price" placeholder="Price"><br>
-    
+        <input type="number" step="0.01" name="price" placeholder="Price">
+
+        <!-- Room Dropdown -->
         <label for="room">Room:</label>
-        <input type="text" name="room" placeholder="Living Room"><br><br>
-    
+        <select id="room" name="room">
+            <option value="Living Room">Living Room</option>
+            <option value="Bedroom">Bedroom</option>
+            <option value="Kitchen">Kitchen</option>
+            <option value="Dining Room">Dining Room</option>
+            <option value="Bathroom">Bathroom</option>
+            <option value="Office">Office</option>
+            <option value="Other">Other</option>
+        </select>
+
         <button type="submit">Add Furniture</button>
     </form>
-    
-    
 
-    <br>
-    <a href="{{ url_for('index') }}">Back to Home</a>
+    <!-- Back to Home link -->
+    <div class="back-link">
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </div>
 
     <!-- Display flash messages -->
     {% with messages = get_flashed_messages() %}
         {% if messages %}
-            <ul>
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
+            <div class="flash-messages">
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
         {% endif %}
     {% endwith %}
+
 </body>
 </html>
