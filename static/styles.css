@@ -1,48 +1,54 @@
+/* General styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
     padding: 20px;
 }
 
 h1 {
-    color: #333;
     text-align: center;
+    color: #333;
     margin-bottom: 20px;
 }
 
 h2 {
-    color: #333;
+    color: #444;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 10px;
     margin-top: 40px;
-    border-bottom: 2px solid #333;
-    padding-bottom: 5px;
+    margin-bottom: 20px;
 }
 
+/* Tables */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
-    padding: 10px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
     text-align: left;
 }
 
 th {
-    background-color: #f4f4f4;
-    font-weight: bold;
+    background-color: #007BFF;
+    color: white;
 }
 
 td {
-    vertical-align: middle;
+    background-color: white;
+    color: #333;
 }
 
+/* Styling for the price column */
 .price {
     text-align: right;
+    font-size: 1em;
+    color: #333;
 }
 
 .strike {
@@ -50,28 +56,249 @@ td {
     color: red;
 }
 
+
+/* Actions */
 .actions {
     text-align: center;
 }
 
 a {
     text-decoration: none;
-    color: blue;
+    color: #007BFF;
+    font-weight: bold;
 }
 
 a:hover {
+    color: #0056b3;
     text-decoration: underline;
 }
 
-.total {
+/* Overall Total */
+.overall-total {
+    font-size: 1.4em;
     font-weight: bold;
-    font-size: 1.2em;
     text-align: right;
+    margin-top: 20px;
+    color: #007BFF;
 }
 
-.overall-total {
-    text-align: right;
-    font-size: 1.4em;
+/* Buttons */
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Add item link */
+.add-item-link {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.2em;
     margin-top: 20px;
+}
+
+/* Flash messages */
+.flash-messages {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Floating Action Button (FAB) */
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 24px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.fab a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.fab:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .fab {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+    }
+}
+
+/* Form styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+label {
     font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #333;
+}
+
+input[type="text"], input[type="url"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+}
+
+.back-link a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* Form Inputs */
+input[type="text"], input[type="url"], input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Dropdown Styling */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #333;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23007BFF" d="M2 0L0 2h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* Button Styling */
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Centering the Form */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Back Link */
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
 }

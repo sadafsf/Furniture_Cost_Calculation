@@ -26,17 +26,13 @@
                 <td>{{ item['name'] }}</td>
                 <td class="price">
                     {% if item['sale_price'] and item['original_price'] %}
-                        <!-- Show both sale and original prices if both are available -->
                         <span class="strike">${{ item['original_price'] }}</span> ${{ item['sale_price'] }}
-                    {% elif item['sale_price'] %}
-                        <!-- Show sale price only if no original price is available -->
-                        ${{ item['sale_price'] }}
-                    {% else %}
-                        <!-- Show original price if only original price exists -->
+                    {% elif item['original_price'] %}
                         ${{ item['original_price'] }}
+                    {% else %}
+                        ${{ item['sale_price'] }}
                     {% endif %}
                 </td>
-                
                 <td><a href="{{ item['url'] }}" target="_blank">View</a></td>
                 <td class="actions">
                     <a href="{{ url_for('update_item', furniture_id=item['id']) }}">Update</a> |
@@ -51,18 +47,24 @@
     <!-- Overall Total Price -->
     <div class="overall-total">Overall Total Price: ${{ overall_total_price }}</div>
 
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="{{ url_for('add_item') }}" style="font-size: 1.2em; color: #007BFF;">Add New Item</a>
+    <!-- Add new item -->
+    <div class="add-item-link">
+        <a href="{{ url_for('add_item') }}">Add New Item</a>
+    </div>
+
+    <!-- Floating Action Button (FAB) -->
+    <div class="fab">
+        <a href="{{ url_for('add_item') }}">+</a>
     </div>
 
     <!-- Display flash messages -->
     {% with messages = get_flashed_messages() %}
         {% if messages %}
-            <ul style="color: red;">
+            <div class="flash-messages">
                 {% for message in messages %}
-                    <li>{{ message }}</li>
+                    <p>{{ message }}</p>
                 {% endfor %}
-            </ul>
+            </div>
         {% endif %}
     {% endwith %}
 </body>
