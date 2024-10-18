@@ -16,6 +16,7 @@
             <tr>
                 <th>Name</th>
                 <th class="price">Price (Sale/Original)</th>
+                <th>Image</th>
                 <th>URL</th>
                 <th class="actions">Actions</th>
             </tr>
@@ -25,14 +26,15 @@
             <tr>
                 <td>{{ item['name'] }}</td>
                 <td class="price">
-                    {% if item['sale_price'] and item['original_price'] %}
+                    {% if item['sale_price'] %}
                         <span class="strike">${{ item['original_price'] }}</span> ${{ item['sale_price'] }}
-                    {% elif item['original_price'] %}
-                        ${{ item['original_price'] }}
+                    {% elif item['min_price'] and item['max_price'] %}
+                        ${{ item['min_price'] }} - ${{ item['max_price'] }}  <!-- Display both min and max price -->
                     {% else %}
-                        ${{ item['sale_price'] }}
+                        ${{ item['original_price'] }}
                     {% endif %}
                 </td>
+                <td><img src="{{ item['image_url'] }}" alt="{{ item['name'] }}" width="100"></td>
                 <td><a href="{{ item['url'] }}" target="_blank">View</a></td>
                 <td class="actions">
                     <a href="{{ url_for('update_item', furniture_id=item['id']) }}">Update</a> |

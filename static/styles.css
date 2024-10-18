@@ -56,7 +56,6 @@ td {
     color: red;
 }
 
-
 /* Actions */
 .actions {
     text-align: center;
@@ -128,12 +127,10 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-
 .fab a {
     color: white;
     text-decoration: none;
 }
-
 
 .fab:hover {
     background-color: #0056b3;
@@ -168,12 +165,6 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #007BFF;
-}
-
 label {
     font-weight: bold;
     margin-bottom: 10px;
@@ -181,49 +172,6 @@ label {
     color: #333;
 }
 
-input[type="text"], input[type="url"], input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-}
-
-button {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.back-link {
-    text-align: center;
-    margin-top: 20px;
-    display: block;
-}
-
-.back-link a {
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
-}
-
-.back-link a:hover {
-    text-decoration: underline;
-}
-
-/* Form Inputs */
 input[type="text"], input[type="url"], input[type="number"], select {
     width: 100%;
     padding: 10px;
@@ -259,22 +207,23 @@ select:focus {
     border-color: #007BFF;
 }
 
-/* Button Styling */
-button {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+/* Color Swatch Styling */
+.color-swatch {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
 }
 
-button:hover {
-    background-color: #0056b3;
+/* Furniture Image Styling */
+.furniture-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 /* Centering the Form */

@@ -1,26 +1,48 @@
 [
     {
-        "id": "7f3777c4-f7c1-40ff-b130-e544a49bbf3a",
-        "name": "best sellerInfinity Brass Oblong Wall Mirror 23\"x37\"",
-        "original_price": null,
-        "sale_price": 149.0,
-        "room": "Living room",
-        "url": "https://www.cb2.ca/accessories/mirrors/"
+        "id": "72456075-e729-43ba-9f73-f5ed18b18abf",
+        "name": "Beaumont Chair",
+        "min_price": null,
+        "max_price": 674.0,
+        "sale_price": 1572.0,
+        "room": "Living Room",
+        "url": "https://www.westelm.ca/products/beaumont-chair-h12936/?position=1",
+        "image_url": "https://assets.weimgs.com/weimgs/rk/images/wcm/products/202437/0071/beaumont-chair-1-b.jpg"
     },
     {
-        "id": "37b17be4-64ce-4bc5-873d-7360d7d9e123",
-        "name": "Portobello Stoneware Dessert Plate",
-        "original_price": 24.0,
-        "sale_price": 16.0,
-        "room": "Kitchen ",
-        "url": ""
+        "id": "67f91c1e-f5a2-4211-85ef-42d7dc1752da",
+        "name": "Beaumont Chair",
+        "min_price": null,
+        "max_price": 674.0,
+        "sale_price": 1572.0,
+        "room": "Living Room",
+        "url": "https://www.westelm.ca/products/beaumont-chair-h12936/?position=1",
+        "image_url": "https://assets.weimgs.com/weimgs/rk/images/wcm/products/202437/0071/beaumont-chair-1-b.jpg"
     },
     {
-        "id": "05bb9688-5b09-4597-8803-88e3c7198b49",
-        "name": "Talia Pendant (14\")",
+        "id": "63ddc475-afe3-4356-b2ae-a39b83d1bf8d",
+        "name": "Gunnison Leather Chair",
         "original_price": null,
-        "sale_price": 239.0,
-        "room": "Living room",
-        "url": "https://www.westelm.ca/products/talia-pendant-14-h12928/?position=1"
+        "sale_price": null,
+        "min_price": "Living Room",
+        "max_price": "https://www.westelm.ca/products/gunnison-leather-chair-h12939/?position=3",
+        "min_sale_price": "https://assets.weimgs.com/weimgs/rk/images/wcm/products/202437/0070/gunnison-leather-chair-8-b.jpg",
+        "max_sale_price": null,
+        "room": null,
+        "url": null,
+        "image_url": null
+    },
+    {
+        "id": "176301ce-1011-4636-a8f4-b218d737c301",
+        "name": "Gunnison Leather Chair",
+        "original_price": null,
+        "sale_price": null,
+        "min_price": "Living Room",
+        "max_price": "https://www.westelm.ca/products/gunnison-leather-chair-h12939/?position=3",
+        "min_sale_price": "https://assets.weimgs.com/weimgs/rk/images/wcm/products/202437/0070/gunnison-leather-chair-8-b.jpg",
+        "max_sale_price": null,
+        "room": null,
+        "url": null,
+        "image_url": null
     }
 ]
